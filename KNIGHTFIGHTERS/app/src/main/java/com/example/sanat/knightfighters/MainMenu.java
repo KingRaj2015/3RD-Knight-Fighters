@@ -1,7 +1,10 @@
 package com.example.sanat.knightfighters;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,13 +24,55 @@ public class MainMenu extends AppCompatActivity {
 
     public void NewButton(View v){
 
-         startActivity(new Intent(this, GameMap.class));
+         startActivity(new Intent(this, GameBackGround.class));
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+         mp.start();
+    }
+    public void resume(View v){
 
+        //startActivity(new Intent(this, GameBackGround.class));
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+        mp.start();
+    }
+    public void settings(View v){
+
+        //startActivity(new Intent(this, GameBackGround.class));
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+        mp.start();
     }
 
     public void Credits(View v){
 
         startActivity(new Intent(this,Credits.class));
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+        mp.start();
+    }
+    public void exit(View v){
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+        mp.start();
+        AlertDialog.Builder message = new AlertDialog.Builder(MainMenu.this);
+        message.setTitle("             Are you sure you want to exit?");
+        message.setCancelable(true);
+        message.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+
+                }
+
+        );
+        message.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        System.exit(0);
+                    }
+
+                }
+
+        );
+
+        message.create();
+        message.show();
+
 
     }
     @Override

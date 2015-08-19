@@ -39,6 +39,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".GameBackGround"
+            android:label="@string/title_activity_game_back_ground"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme"
+            android:parentActivityName=".MainMenu" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.GameBackGround" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.sanat.knightfighters.MainMenu" />
+        </activity>
     </application>
 
 </manifest>

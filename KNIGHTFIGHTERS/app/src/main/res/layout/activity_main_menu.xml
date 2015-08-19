@@ -80,18 +80,7 @@
                 android:text="RESUME GAME"
                 android:id="@+id/button2"
                 android:layout_marginLeft="0dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/button_background"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ARMOUR STORE"
-                android:id="@+id/button3"
-                android:layout_marginLeft="0dp"
+                android:onClick="resume"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/button_background"
                 android:textColor="#ffffff"
@@ -102,6 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SETTINGS"
+                android:onClick="settings"
                 android:id="@+id/button4"
                 android:layout_marginLeft="0dp"
                 android:layout_gravity="center_horizontal"
@@ -118,6 +108,18 @@
                 android:id="@+id/button5"
                 android:layout_marginLeft="0dp"
                 android:layout_gravity="center_horizontal"
+                android:background="@drawable/button_background"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXIT GAME"
+                android:onClick="exit"
+                android:id="@+id/button3"
+                android:layout_marginLeft="0dp"
                 android:background="@drawable/button_background"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
