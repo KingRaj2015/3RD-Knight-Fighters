@@ -42,9 +42,9 @@
         <activity
             android:name=".GameBackGround"
             android:label="@string/title_activity_game_back_ground"
+            android:parentActivityName=".MainMenu"
             android:screenOrientation="landscape"
-            android:theme="@style/FullscreenTheme"
-            android:parentActivityName=".MainMenu" >
+            android:theme="@style/FullscreenTheme" >
             <intent-filter>
                 <action android:name="com.example.sanat.knightfighters.GameBackGround" />
 
@@ -54,6 +54,94 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.sanat.knightfighters.MainMenu" />
+        </activity>
+        <activity
+            android:name=".Level1"
+            android:label="@string/title_activity_level1"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.Level1" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Level1background"
+            android:label="@string/title_activity_level1background"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.Level1background" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Level2background"
+            android:label="@string/title_activity_level2background"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.Level2background" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Level3background"
+            android:label="@string/title_activity_level3background"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.Level3background" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Level4background"
+            android:label="@string/title_activity_level4background"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.Level4background" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Level2"
+            android:label="@string/title_activity_level2"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.Level2" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Level3"
+            android:label="@string/title_activity_level3"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.Level3" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Level4"
+            android:label="@string/title_activity_level4"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="com.example.sanat.knightfighters.Level4" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
