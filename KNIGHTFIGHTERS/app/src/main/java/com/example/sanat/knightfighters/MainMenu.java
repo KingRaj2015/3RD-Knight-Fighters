@@ -22,7 +22,7 @@ public class MainMenu extends AppCompatActivity {
 
     }
 
-    public void NewButton(View v){
+    public void btn_New(View v){
 
          startActivity(new Intent(this, GameBackGround.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
