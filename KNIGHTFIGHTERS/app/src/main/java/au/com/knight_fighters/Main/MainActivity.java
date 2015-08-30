@@ -1,7 +1,6 @@
-package com.example.sanat.knightfighters;
+package au.com.knight_fighters.Main;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -10,10 +9,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import au.com.knight_fighters.R;
+import au.com.knight_fighters.Intro.StoryIntroActivity;
 
-public class MainMenu extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,33 +23,33 @@ public class MainMenu extends AppCompatActivity {
 
     public void NewButton(View v){
 
-         startActivity(new Intent(this, GameBackGround.class));
+         startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
          mp.start();
     }
     public void resume(View v){
 
-        //startActivity(new Intent(this, GameBackGround.class));
+        //startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();
     }
     public void settings(View v){
 
-        //startActivity(new Intent(this, GameBackGround.class));
+        //startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();
     }
 
     public void Credits(View v){
 
-        startActivity(new Intent(this,Credits.class));
+        startActivity(new Intent(this,CreditsActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();
     }
     public void exit(View v){
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();
-        AlertDialog.Builder message = new AlertDialog.Builder(MainMenu.this);
+        AlertDialog.Builder message = new AlertDialog.Builder(MainActivity.this);
         message.setTitle("             Are you sure you want to exit?");
         message.setCancelable(true);
         message.setNegativeButton("No", new DialogInterface.OnClickListener() {

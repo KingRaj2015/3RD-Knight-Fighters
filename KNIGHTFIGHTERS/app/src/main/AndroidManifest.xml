@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sanat.knightfighters" >
+    package="au.com.knight_fighters" >
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/FullscreenTheme" >
         <activity
-            android:name=".MainMenu"
+            android:name=".Main.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
@@ -18,42 +18,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GameMap"
+            android:name=".Intro.IntroMapActivity"
             android:label="@string/title_activity_game_map"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.GameMap" />
+                <action android:name="au.com.knight_fighters.GameMap" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Credits"
+            android:name=".Main.CreditsActivity"
             android:label="@string/title_activity_credits"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Credits" />
+                <action android:name="au.com.knight_fighters.Credits" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".GameBackGround"
+            android:name=".Intro.StoryIntroActivity"
             android:label="@string/title_activity_game_back_ground"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme"
-            android:parentActivityName=".MainMenu" >
+            android:parentActivityName=".Main.MainActivity" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.GameBackGround" />
+                <action android:name="au.com.knight_fighters.GameBackGround" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sanat.knightfighters.MainMenu" />
+                android:value=".Main.MainActivity" />
         </activity>
     </application>
 
