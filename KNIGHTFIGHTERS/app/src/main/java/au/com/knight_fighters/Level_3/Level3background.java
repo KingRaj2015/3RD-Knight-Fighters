@@ -1,4 +1,4 @@
-package com.example.sanat.knightfighters;
+package au.com.knight_fighters.Level_3;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import au.com.knight_fighters.R;
 
 public class Level3background extends AppCompatActivity {
 

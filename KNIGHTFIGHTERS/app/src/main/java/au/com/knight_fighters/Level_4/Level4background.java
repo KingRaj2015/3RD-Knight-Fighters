@@ -1,4 +1,4 @@
-package com.example.sanat.knightfighters;
+package au.com.knight_fighters.Level_4;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,14 +8,14 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import au.com.knight_fighters.R;
 
-public class Level1background extends AppCompatActivity {
+public class Level4background extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level1background);
-
+        setContentView(R.layout.activity_level4background);
         RelativeLayout levelbg = (RelativeLayout)findViewById(R.id.levelbg);
 
         levelbg.setOnTouchListener(
@@ -29,11 +29,10 @@ public class Level1background extends AppCompatActivity {
                     }
                 }
         );
-
     }
     public void handletouch(MotionEvent m){
         if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
-            startActivity(new Intent(this, Level1.class));
+            startActivity(new Intent(this, Level4.class));
             finish();
 
         }
@@ -44,7 +43,7 @@ public class Level1background extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_level1background, menu);
+        getMenuInflater().inflate(R.menu.menu_level4background, menu);
         return true;
     }
 

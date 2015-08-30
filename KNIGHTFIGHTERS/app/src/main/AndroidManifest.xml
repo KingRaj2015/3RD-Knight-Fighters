@@ -18,17 +18,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Intro.IntroMapActivity"
-            android:label="@string/title_activity_game_map"
-            android:screenOrientation="landscape"
-            android:theme="@style/FullscreenTheme" >
-            <intent-filter>
-                <action android:name="au.com.knight_fighters.GameMap" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".Main.CreditsActivity"
             android:label="@string/title_activity_credits"
             android:screenOrientation="landscape"
@@ -42,14 +31,9 @@
         <activity
             android:name=".Intro.StoryIntroActivity"
             android:label="@string/title_activity_game_back_ground"
-            android:parentActivityName=".MainMenu"
+            android:parentActivityName=".Main.MainActivity"
             android:screenOrientation="landscape"
-<<<<<<< HEAD
-            android:theme="@style/FullscreenTheme"
-            android:parentActivityName=".Main.MainActivity" >
-=======
             android:theme="@style/FullscreenTheme" >
->>>>>>> origin/master
             <intent-filter>
                 <action android:name="au.com.knight_fighters.GameBackGround" />
 
@@ -61,89 +45,89 @@
                 android:value=".Main.MainActivity" />
         </activity>
         <activity
-            android:name=".Level1"
+            android:name=".Level_1.Level1"
             android:label="@string/title_activity_level1"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Level1" />
+                <action android:name="au.com.knight_fighters.Level1" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Level1background"
+            android:name=".Level_1.Level1background"
             android:label="@string/title_activity_level1background"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Level1background" />
+                <action android:name="au.com.knight_fighters.Level1background" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Level2background"
+            android:name=".Level_2.Level2background"
             android:label="@string/title_activity_level2background"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Level2background" />
+                <action android:name="au.com.knight_fighters.Level2background" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Level3background"
+            android:name=".Level_3.Level3background"
             android:label="@string/title_activity_level3background"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Level3background" />
+                <action android:name="au.com.knight_fighters.Level3background" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Level4background"
+            android:name=".Level_4.Level4background"
             android:label="@string/title_activity_level4background"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Level4background" />
+                <action android:name="au.com.knight_fighters.Level4background" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Level2"
+            android:name=".Level_2.Level2"
             android:label="@string/title_activity_level2"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Level2" />
+                <action android:name="au.com.knight_fighters.Level2" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Level3"
+            android:name=".Level_3.Level3"
             android:label="@string/title_activity_level3"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Level3" />
+                <action android:name="au.com.knight_fighters.Level3" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Level4"
+            android:name=".Level_4.Level4"
             android:label="@string/title_activity_level4"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
-                <action android:name="com.example.sanat.knightfighters.Level4" />
+                <action android:name="au.com.knight_fighters.Level4" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.sanat.knightfighters.Level3background"
+    tools:context="au.com.knight_fighters.Level_3.Level3background"
     android:id="@+id/levelbg">
 
     <TextView

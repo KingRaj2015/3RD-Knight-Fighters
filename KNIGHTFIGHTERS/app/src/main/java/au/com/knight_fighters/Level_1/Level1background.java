@@ -1,25 +1,51 @@
-package com.example.sanat.knightfighters;
+package au.com.knight_fighters.Level_1;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.RelativeLayout;
+import au.com.knight_fighters.R;
 
-public class Level1 extends AppCompatActivity {
+public class Level1background extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level1);
+        setContentView(R.layout.activity_level1background);
+
+        RelativeLayout levelbg = (RelativeLayout)findViewById(R.id.levelbg);
+
+        levelbg.setOnTouchListener(
+                new RelativeLayout.OnTouchListener() {
+                    public boolean onTouch(View v, MotionEvent m) {
+
+                        handletouch(m);
+
+                        return true;
+
+                    }
+                }
+        );
+
+    }
+    public void handletouch(MotionEvent m){
+        if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
+            startActivity(new Intent(this, Level1.class));
+            finish();
+
+        }
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_level1, menu);
+        getMenuInflater().inflate(R.menu.menu_level1background, menu);
         return true;
     }
 

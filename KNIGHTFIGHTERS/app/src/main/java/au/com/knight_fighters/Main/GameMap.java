@@ -1,4 +1,4 @@
-package com.example.sanat.knightfighters;
+package au.com.knight_fighters.Main;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.RelativeLayout;
+import au.com.knight_fighters.R;
+import au.com.knight_fighters.Level_1.Level1background;
+import au.com.knight_fighters.Level_2.Level2background;
+import au.com.knight_fighters.Level_3.Level3background;
+import au.com.knight_fighters.Level_4.Level4background;
 
 public class GameMap extends AppCompatActivity {
 
