@@ -8,7 +8,11 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 import android.view.View;
+
+import au.com.knight_fighters.Main.GameMap;
 import au.com.knight_fighters.R;
+
+
 
 public class StoryIntroActivity extends AppCompatActivity {
 
@@ -37,7 +41,7 @@ public class StoryIntroActivity extends AppCompatActivity {
 
     public void handleTouch(MotionEvent m){
         if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
-            startActivity(new Intent(this, IntroMapActivity.class));
+            startActivity(new Intent(this, GameMap.class));
             finish();
 
         }

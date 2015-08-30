@@ -1,22 +1,23 @@
-package com.example.sanat.knightfighters;
+package au.com.knight_fighters.Level_1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import au.com.knight_fighters.R;
 
-public class Level3 extends AppCompatActivity {
+public class Level1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level3);
+        setContentView(R.layout.activity_level1);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_level3, menu);
+        getMenuInflater().inflate(R.menu.menu_level1, menu);
         return true;
     }
 
