@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void NewButton(View v){
+    public void btn_New(View v){
 
          startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);

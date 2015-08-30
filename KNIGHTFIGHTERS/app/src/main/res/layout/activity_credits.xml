@@ -42,16 +42,13 @@
             android:orientation="horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.50">
+            android:layout_weight="1.25">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/imageView"
-                android:src="@drawable/left"
-
-
-                />
+                android:src="@drawable/left" />
 
         </LinearLayout>
 
@@ -62,64 +59,102 @@
             android:paddingLeft="0dp"
             android:layout_weight="1">
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Blue Frog Industries"
-                android:textSize="15dp"
-                android:layout_marginTop="30dp"
-                android:textColor="#080143"
-                android:textStyle="bold"
-                android:id="@+id/textView4" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView4"
+                    android:src="@drawable/blue" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Blue Frog Industries"
+                        android:textSize="15dp"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cameron Maher"
-                android:id="@+id/textView3"
-                android:textColor="#080143"
-                 />
+                        android:textColor="#080143"
+                        android:textStyle="bold"
+                        android:id="@+id/textView4" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="3RD Knight Fighters"
-                android:textSize="15dp"
-                android:layout_marginTop="30dp"
-                android:id="@+id/textView5"
-                android:textColor="#080143"
-                android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cameron Maher"
+                        android:id="@+id/textView3"
+                        android:textColor="#080143"
+                        />
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rajat Thomas"
-                android:id="@+id/textView6"
-                android:textColor="#080143"/>
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Richard Daykin"
-                android:id="@+id/textView7"
-                android:textColor="#080143"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fawad Rafiq"
-                android:id="@+id/textView8"
-                android:textColor="#080143"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Daniel Mould"
-                android:id="@+id/textView9"
-                android:textColor="#080143"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView5"
+                    android:src="@drawable/viewlogo" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="3RD Knight Fighters"
+                        android:textSize="15dp"
+                        android:id="@+id/textView5"
+                        android:textColor="#080143"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rajat Thomas"
+                        android:id="@+id/textView6"
+                        android:textColor="#080143"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Richard Daykin"
+                        android:id="@+id/textView7"
+                        android:textColor="#080143"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fawad Rafiq"
+                        android:id="@+id/textView8"
+                        android:textColor="#080143"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daniel Mould"
+                        android:id="@+id/textView9"
+                        android:textColor="#080143"/>
+                    </LinearLayout>
+
+            </LinearLayout>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -138,7 +173,7 @@
             android:orientation="horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.50">
+            android:layout_weight="1.25">
 
             <ImageView
                 android:layout_width="wrap_content"
