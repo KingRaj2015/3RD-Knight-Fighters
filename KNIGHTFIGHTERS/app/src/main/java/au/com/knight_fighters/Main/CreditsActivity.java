@@ -8,6 +8,10 @@ import android.view.MenuItem;
 import android.view.View;
 import au.com.knight_fighters.R;
 
+/*
+* Purpose: to display the creator's and benefactors of the development of this application.
+ */
+
 public class CreditsActivity extends AppCompatActivity {
 
     @Override

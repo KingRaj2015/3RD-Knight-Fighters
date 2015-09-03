@@ -13,6 +13,13 @@ import au.com.knight_fighters.Level_2.Level2background;
 import au.com.knight_fighters.Level_3.Level3background;
 import au.com.knight_fighters.Level_4.Level4background;
 
+/*
+* Activity to be displayed after the StoryIntroActivity and before each new level.
+* Purpose: to provide an overview map of where the knight avatar's activities will take him. Each
+* button leads to a corresponding level, and will be unlocked only when the previous level has been
+* completed.
+ */
+
 public class GameMap extends AppCompatActivity {
 
     @Override

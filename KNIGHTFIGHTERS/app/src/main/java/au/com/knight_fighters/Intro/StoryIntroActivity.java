@@ -12,7 +12,10 @@ import android.view.View;
 import au.com.knight_fighters.Main.GameMap;
 import au.com.knight_fighters.R;
 
-
+/*
+* Purpose: This activity will show the introductory storyline animation in a pre-rendered form.
+* This will be used when the user chooses to begin a new game.
+ */
 
 public class StoryIntroActivity extends AppCompatActivity {
 

@@ -12,6 +12,12 @@ import android.view.View;
 import au.com.knight_fighters.R;
 import au.com.knight_fighters.Intro.StoryIntroActivity;
 
+/*
+* Purpose: This class is the main menu activity for the app.
+* It has buttons to launch a new game (view intro story), resume an existing game, change settings,
+* view the credits and exit the game.
+*/
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
