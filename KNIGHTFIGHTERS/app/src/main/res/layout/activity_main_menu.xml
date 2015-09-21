@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="NEW GAME"
                 android:id="@+id/button"
-                android:onClick="btn_New"
+                android:onClick="NewButton"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/button_background"
                 android:textColor="#ffffff"
