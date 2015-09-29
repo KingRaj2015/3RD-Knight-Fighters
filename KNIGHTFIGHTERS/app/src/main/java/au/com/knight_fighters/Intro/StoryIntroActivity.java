@@ -44,7 +44,7 @@ private VideoView myVideoView;
         });
 
         RelativeLayout gamebg = (RelativeLayout)findViewById(R.id.gamebg);
-
+/*
         gamebg.setOnTouchListener(
                 new RelativeLayout.OnTouchListener() {
                     public boolean onTouch(View v, MotionEvent m) {
@@ -56,7 +56,7 @@ private VideoView myVideoView;
                     }
                 }
         );
-
+*/
 
 
     }
@@ -77,16 +77,24 @@ private VideoView myVideoView;
 
     }
 
-
+/*
     public void handleTouch(MotionEvent m){
         if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
             CallNextActivity();
 
         }
-
-
-
     }
+*/
+    @Override
+    public boolean onTouchEvent(MotionEvent e) {
+        if(e.getActionMasked() == MotionEvent.ACTION_DOWN){
+            CallNextActivity();
+
+        }
+
+        return true;
+    }
+
     public void CallNextActivity(){
         startActivity(new Intent(this, GameMap.class));
         finish();
