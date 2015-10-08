@@ -1,6 +1,7 @@
 package au.com.knight_fighters.Level_4;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,17 +9,35 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.VideoView;
+
+import au.com.knight_fighters.Level_3.Level3;
 import au.com.knight_fighters.R;
 
 public class Level4background extends AppCompatActivity {
-
+    private VideoView myVideoView;
+    private int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level4background);
-        RelativeLayout levelbg = (RelativeLayout)findViewById(R.id.levelbg);
 
-        levelbg.setOnTouchListener(
+
+        myVideoView = (VideoView)findViewById(R.id.videoView);
+        myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.level4);
+        myVideoView.start();
+        myVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                CallNextActivity();
+            }
+        });
+
+        RelativeLayout levelbg4 = (RelativeLayout)findViewById(R.id.levelbg4);
+
+        levelbg4.setOnTouchListener(
                 new RelativeLayout.OnTouchListener() {
                     public boolean onTouch(View v, MotionEvent m) {
 
@@ -30,13 +49,32 @@ public class Level4background extends AppCompatActivity {
                 }
         );
     }
+    @Override
+    public void onPause() {
+        super.onPause();
+        position = myVideoView.getCurrentPosition();
+        myVideoView.pause();
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        myVideoView.seekTo(position);
+        myVideoView.start();
+
+    }
     public void handletouch(MotionEvent m){
         if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
-            startActivity(new Intent(this, Level4.class));
-            finish();
+            CallNextActivity();
 
         }
 
+
+    }
+    public void CallNextActivity(){
+        startActivity(new Intent(this, Level4.class));
+        finish();
 
     }
 
