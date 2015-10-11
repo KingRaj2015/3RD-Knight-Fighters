@@ -1,6 +1,7 @@
 package au.com.knight_fighters.Main;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -11,20 +12,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.VideoView;
+import android.util.DisplayMetrics;
 
 import au.com.knight_fighters.R;
 import au.com.knight_fighters.Intro.StoryIntroActivity;
 
+/*
+* Purpose: This class is the main menu activity for the app.
+* It has buttons to launch a new game (view intro story), resume an existing game, change settings,
+* view the credits and exit the game.
+*/
+
 public class MainActivity extends AppCompatActivity {
+
+    public static Context appContext;
+    public static float scrWidth;
+    public static float scrHeight;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+        DisplayMetrics displayMetrics = appContext.getResources().getDisplayMetrics();
+        scrWidth = displayMetrics.widthPixels;
+        scrHeight = displayMetrics.heightPixels;
     }
 
-    public void btn_New(View v){
+    public void NewButton(View v){
 
          startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
