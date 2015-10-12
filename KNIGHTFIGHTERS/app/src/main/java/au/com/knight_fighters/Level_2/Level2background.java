@@ -24,7 +24,7 @@ public class Level2background extends AppCompatActivity {
 
 
         myVideoView = (VideoView)findViewById(R.id.videoView);
-        myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.intro);
+        myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.level2);
         myVideoView.start();
         myVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
