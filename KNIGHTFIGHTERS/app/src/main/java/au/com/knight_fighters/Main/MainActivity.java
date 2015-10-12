@@ -35,9 +35,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+        DisplayMetrics displayMetrics = appContext.getResources().getDisplayMetrics();
+        scrWidth = displayMetrics.widthPixels;
+        scrHeight = displayMetrics.heightPixels;
     }
 
-    public void btn_New(View v){
+    public void NewButton(View v){
 
          startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
