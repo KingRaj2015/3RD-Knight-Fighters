@@ -1,9 +1,15 @@
 package au.com.knight_fighters.Level_2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.RelativeLayout;
+
+import au.com.knight_fighters.Main.GameMap;
 import au.com.knight_fighters.R;
 
 public class Level2 extends AppCompatActivity {
@@ -12,8 +18,34 @@ public class Level2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level2);
-    }
 
+        RelativeLayout level2 = (RelativeLayout)findViewById(R.id.levelbg2);
+
+        level2.setOnTouchListener(
+                new RelativeLayout.OnTouchListener() {
+                    public boolean onTouch(View v, MotionEvent m) {
+
+                        handletouch(m);
+
+                        return true;
+
+                    }
+                }
+        );
+    }
+    public void handletouch(MotionEvent m){
+        if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
+            CallNextActivity();
+
+        }
+
+
+    }
+    public void CallNextActivity(){
+        startActivity(new Intent(this, GameMap.class));
+        finish();
+
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

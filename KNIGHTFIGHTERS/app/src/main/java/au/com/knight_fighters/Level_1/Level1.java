@@ -1,12 +1,18 @@
 package au.com.knight_fighters.Level_1;
 
+import android.content.Intent;
 import android.opengl.GLSurfaceView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.Window;
+import android.widget.RelativeLayout;
 
+import au.com.knight_fighters.Level_2.Level2;
+import au.com.knight_fighters.Main.GameMap;
 import au.com.knight_fighters.R;
 
 import au.com.knight_fighters.Main.MainActivity;
@@ -19,17 +25,42 @@ public class Level1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_level1);
+        RelativeLayout level1 = (RelativeLayout)findViewById(R.id.levelbg2);
 
-        
+        level1.setOnTouchListener(
+                new RelativeLayout.OnTouchListener() {
+                    public boolean onTouch(View v, MotionEvent m) {
 
-        glSurface = new GLSurfaceView(getApplicationContext());
-        renderer = new Level1_Renderer();
-        glSurface.setRenderer(renderer);
-        setContentView(glSurface);
+                        handletouch(m);
+
+                        return true;
+
+                    }
+                }
+        );
+
+        //glSurface = new GLSurfaceView(getApplicationContext());
+        //renderer = new Level1_Renderer();
+        //glSurface.setRenderer(renderer);
+        //setContentView(glSurface);
+
+    }
+    public void handletouch(MotionEvent m){
+        if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
+            CallNextActivity();
+
+        }
+
+
+    }
+    public void CallNextActivity(){
+        startActivity(new Intent(this, GameMap.class));
+        finish();
 
     }
 
-    @Override
+   /* @Override
     protected void onPause() {
         super.onPause();
         glSurface.onPause();
@@ -42,7 +73,7 @@ public class Level1 extends AppCompatActivity {
 
 
 
-
+*/
 
 
 
