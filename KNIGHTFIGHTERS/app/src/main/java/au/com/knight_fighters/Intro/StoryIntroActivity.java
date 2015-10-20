@@ -31,7 +31,7 @@ private VideoView myVideoView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_back_ground);
 
-        myVideoView = (VideoView)findViewById(R.id.videoView);
+        myVideoView = (VideoView)findViewById(R.id.videoView_intro);
         myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.intro);
         myVideoView.start();
         myVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -42,21 +42,6 @@ private VideoView myVideoView;
                 CallNextActivity();
             }
         });
-
-        RelativeLayout gamebg = (RelativeLayout)findViewById(R.id.gamebg);
-/*
-        gamebg.setOnTouchListener(
-                new RelativeLayout.OnTouchListener() {
-                    public boolean onTouch(View v, MotionEvent m) {
-                        handleTouch(m);
-
-
-                        return true;
-
-                    }
-                }
-        );
-*/
 
 
     }
@@ -77,14 +62,7 @@ private VideoView myVideoView;
 
     }
 
-/*
-    public void handleTouch(MotionEvent m){
-        if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
-            CallNextActivity();
 
-        }
-    }
-*/
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         if(e.getActionMasked() == MotionEvent.ACTION_DOWN){

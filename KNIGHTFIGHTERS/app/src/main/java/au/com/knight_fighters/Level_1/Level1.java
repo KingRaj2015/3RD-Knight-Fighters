@@ -26,7 +26,7 @@ public class Level1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level1);
-        RelativeLayout level1 = (RelativeLayout)findViewById(R.id.levelbg2);
+        RelativeLayout level1 = (RelativeLayout)findViewById(R.id.level1);
 
         level1.setOnTouchListener(
                 new RelativeLayout.OnTouchListener() {

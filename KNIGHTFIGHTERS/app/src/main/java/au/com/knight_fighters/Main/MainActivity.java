@@ -28,13 +28,19 @@ public class MainActivity extends AppCompatActivity {
     public static Context appContext;
     public static float scrWidth;
     public static float scrHeight;
+    private static MainActivity main;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        main = this;
 
+    }
+    public static MainActivity finishActivity (){
+
+         return main;
     }
 
     public void btn_New(View v){

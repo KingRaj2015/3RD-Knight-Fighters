@@ -19,7 +19,7 @@ public class Level2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level2);
 
-        RelativeLayout level2 = (RelativeLayout)findViewById(R.id.levelbg2);
+        RelativeLayout level2 = (RelativeLayout)findViewById(R.id.level2);
 
         level2.setOnTouchListener(
                 new RelativeLayout.OnTouchListener() {

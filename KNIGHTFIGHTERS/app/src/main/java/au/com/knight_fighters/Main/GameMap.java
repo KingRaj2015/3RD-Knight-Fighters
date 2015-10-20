@@ -1,5 +1,7 @@
 package au.com.knight_fighters.Main;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -21,13 +23,18 @@ import au.com.knight_fighters.Level_4.Level4background;
  */
 
 public class GameMap extends AppCompatActivity {
-
+    public static GameMap gamemap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_map);
+        gamemap = this;
+         setContentView(R.layout.activity_game_map);
 
     }
+     public static GameMap finishActivity(){
+        return gamemap;
+    }
+
     public void Level1(View v){
 
         startActivity(new Intent(this, Level1background.class));

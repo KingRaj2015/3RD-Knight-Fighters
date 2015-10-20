@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import au.com.knight_fighters.Main.Conclusion;
 import au.com.knight_fighters.Main.GameMap;
 import au.com.knight_fighters.R;
 
@@ -46,7 +47,7 @@ public class Level4 extends AppCompatActivity {
 
     }
     public void CallNextActivity(){
-        startActivity(new Intent(this, GameMap.class));
+        startActivity(new Intent(this, Conclusion.class));
         finish();
 
     }

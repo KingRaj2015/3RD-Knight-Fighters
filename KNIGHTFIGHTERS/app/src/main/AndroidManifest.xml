@@ -39,7 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Intro.StoryIntroActivity"
             android:label="@string/title_activity_game_back_ground"
@@ -140,6 +139,17 @@
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
                 <action android:name="au.com.knight_fighters.Level4" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Main.Conclusion"
+            android:label="@string/title_activity_conclusion"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="au.com.knight_fighters.Main" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

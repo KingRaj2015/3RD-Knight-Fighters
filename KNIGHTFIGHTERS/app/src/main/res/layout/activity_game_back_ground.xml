@@ -7,7 +7,7 @@
     <VideoView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/videoView"
+        android:id="@+id/videoView_intro"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
