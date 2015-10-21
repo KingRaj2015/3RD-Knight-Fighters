@@ -47,8 +47,7 @@ public class Level3 extends AppCompatActivity {
 
     }
     public void CallNextActivity(){
-        startActivity(new Intent(this, GameMap.class));
-        finish();
+                finish();
 
     }
     @Override

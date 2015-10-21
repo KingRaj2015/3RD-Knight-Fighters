@@ -48,7 +48,7 @@ public class Level4 extends AppCompatActivity {
     }
     public void CallNextActivity(){
         startActivity(new Intent(this, Conclusion.class));
-        finish();
+               finish();
 
     }
 
