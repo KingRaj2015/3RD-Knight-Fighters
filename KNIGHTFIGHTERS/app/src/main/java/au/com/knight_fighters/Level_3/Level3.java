@@ -1,6 +1,7 @@
 package au.com.knight_fighters.Level_3;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,10 +10,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import au.com.knight_fighters.Level_1.Level1background;
 import au.com.knight_fighters.Main.GameMap;
+import au.com.knight_fighters.Main.MainActivity;
 import au.com.knight_fighters.R;
-
+/* CREATED BY RAJAT THOMAS */
 public class Level3 extends AppCompatActivity {
+
+    private static MediaPlayer Background = MainActivity.getBackground_music();
+    private static MediaPlayer level_music= Level1background.getLevel_music();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,9 @@ public class Level3 extends AppCompatActivity {
 
     }
     public void CallNextActivity(){
+        level_music.pause();
+        Background.start();
+        Background.seekTo(0);
                 finish();
 
     }

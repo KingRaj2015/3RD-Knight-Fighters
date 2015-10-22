@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import au.com.knight_fighters.R;
-
+/* CREATED BY RAJAT THOMAS */
 /*
 * Purpose: to display the creator's and benefactors of the development of this application.
  */

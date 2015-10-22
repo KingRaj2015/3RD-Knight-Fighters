@@ -11,17 +11,22 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
+import au.com.knight_fighters.Level_1.Level1background;
 import au.com.knight_fighters.Level_3.Level3;
+import au.com.knight_fighters.Main.MainActivity;
 import au.com.knight_fighters.R;
-
+/* CREATED BY RAJAT THOMAS */
 public class Level4background extends AppCompatActivity {
     private VideoView myVideoView;
     private int position;
+    private static MediaPlayer level_music = Level1background.getLevel_music();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level4background);
 
+        level_music.start();
 
         myVideoView = (VideoView)findViewById(R.id.videoView);
         myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.level4);
@@ -74,6 +79,7 @@ public class Level4background extends AppCompatActivity {
     }
     public void CallNextActivity(){
         startActivity(new Intent(this, Level4.class));
+        level_music.seekTo(0);
         finish();
 
     }

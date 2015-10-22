@@ -1,6 +1,7 @@
 package au.com.knight_fighters.Level_1;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.opengl.GLSurfaceView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,15 +18,21 @@ import au.com.knight_fighters.R;
 
 import au.com.knight_fighters.Main.MainActivity;
 
+/* CREATED BY RAJAT THOMAS */
+
 public class Level1 extends AppCompatActivity {
 
     private GLSurfaceView glSurface;
     private Level1_Renderer renderer;
+    private static MediaPlayer Background = MainActivity.getBackground_music();
+    private static MediaPlayer level_music= Level1background.getLevel_music();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level1);
+
+
         RelativeLayout level1 = (RelativeLayout)findViewById(R.id.level1);
 
         level1.setOnTouchListener(
@@ -55,6 +62,9 @@ public class Level1 extends AppCompatActivity {
 
     }
     public void CallNextActivity(){
+                level_music.pause();
+                Background.start();
+                Background.seekTo(0);
                 finish();
 
     }

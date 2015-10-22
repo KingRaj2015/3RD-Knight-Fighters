@@ -14,12 +14,14 @@ import au.com.knight_fighters.R;
 public class Conclusion extends AppCompatActivity {
     private VideoView myVideoView;
     private int position;
+    private static MediaPlayer Background = MainActivity.getBackground_music();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conclusion);
 
+        Background.seekTo(0);
 
         myVideoView = (VideoView)findViewById(R.id.videoView_conc);
         myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.conclusion);
@@ -63,8 +65,8 @@ public class Conclusion extends AppCompatActivity {
 
     public void CallNextActivity(){
         startActivity(new Intent(this, MainActivity.class));
-        MainActivity.finishActivity().finish();
-        GameMap.finishActivity().finish();
+        MainActivity.getInstance().finish();
+        GameMap.getInstance().finish();
         finish();
        // ( (Activity)"au.com.knight_fighters.Intro.IntroMapActivity").finish());
 

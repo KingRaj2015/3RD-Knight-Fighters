@@ -90,8 +90,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SETTINGS"
-                android:onClick="settings"
+                android:text="HELP"
+                android:onClick="help"
                 android:id="@+id/button4"
                 android:layout_marginLeft="0dp"
                 android:layout_gravity="center_horizontal"

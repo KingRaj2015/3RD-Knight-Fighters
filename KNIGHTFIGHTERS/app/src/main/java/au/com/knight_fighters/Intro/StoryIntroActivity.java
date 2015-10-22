@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.VideoView;
 
 import au.com.knight_fighters.Main.GameMap;
+import au.com.knight_fighters.Main.MainActivity;
 import au.com.knight_fighters.R;
 
 /*
@@ -24,12 +25,15 @@ public class StoryIntroActivity extends AppCompatActivity {
 private VideoView myVideoView;
     private int position;
 
+    private static MediaPlayer Background = MainActivity.getBackground_music();
 
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_back_ground);
+
+
 
         myVideoView = (VideoView)findViewById(R.id.videoView_intro);
         myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.intro);
@@ -75,6 +79,7 @@ private VideoView myVideoView;
 
     public void CallNextActivity(){
         startActivity(new Intent(this, GameMap.class));
+        Background.seekTo(0);
         finish();
 
     }

@@ -17,6 +17,7 @@ import android.util.DisplayMetrics;
 import au.com.knight_fighters.R;
 import au.com.knight_fighters.Intro.StoryIntroActivity;
 
+/* CREATED BY RAJAT THOMAS */
 /*
 * Purpose: This class is the main menu activity for the app.
 * It has buttons to launch a new game (view intro story), resume an existing game, change settings,
@@ -29,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
     public static float scrWidth;
     public static float scrHeight;
     private static MainActivity main;
+    private static MediaPlayer Background;
+
+    public static MediaPlayer getBackground_music (){
+        return Background;
+    }
 
 
     @Override
@@ -36,10 +42,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         main = this;
+        Background = MediaPlayer.create(getApplicationContext(), R.raw.background);
+        Background.start();
+        Background.setLooping(true);
 
     }
-    public static MainActivity finishActivity (){
-
+    public static MainActivity getInstance (){
+        Background.pause();
          return main;
     }
 
@@ -48,18 +57,22 @@ public class MainActivity extends AppCompatActivity {
          startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
          mp.start();
+        Background.seekTo(0);
+
     }
     public void resume(View v){
 
         //startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();
+        Background.stop();
     }
-    public void settings(View v){
+    public void help(View v){
 
         //startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();
+
     }
 
     public void Credits(View v){
@@ -84,7 +97,9 @@ public class MainActivity extends AppCompatActivity {
         );
         message.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        Background.stop();
                         System.exit(0);
+
                     }
 
                 }
