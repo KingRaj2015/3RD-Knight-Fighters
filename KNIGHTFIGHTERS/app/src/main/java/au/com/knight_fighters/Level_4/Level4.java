@@ -1,5 +1,6 @@
 package au.com.knight_fighters.Level_4;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import au.com.knight_fighters.Level_1.Level1background;
@@ -17,8 +19,10 @@ import au.com.knight_fighters.Main.MainActivity;
 import au.com.knight_fighters.R;
 /* CREATED BY RAJAT THOMAS */
 public class Level4 extends AppCompatActivity {
-    private static MediaPlayer Background = MainActivity.getBackground_music();
-    private static MediaPlayer level_music= Level1background.getLevel_music();
+    private MediaPlayer Background = MainActivity.getBackground_music();
+    private MediaPlayer level_music= Level1background.getLevel_music();
+    private Dialog dialog;
+    private Button mainbutton, gamemapbutton, resumebutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,60 @@ public class Level4 extends AppCompatActivity {
     }
 
 
+    public void Pause(View v){
+        dialog = new Dialog(Level4.this);
+        dialog.setTitle("OPTIONS");
+        dialog.setContentView(R.layout.level_options);
+        dialog.show();
 
+        mainbutton = (Button)dialog.findViewById(R.id.options_main);
+        gamemapbutton = (Button)dialog.findViewById(R.id.options_level);
+        resumebutton = (Button)dialog.findViewById(R.id.options_cancel);
+
+        buttonmain_action();
+        buttongamemap_action();
+        buttonresume_action();
+
+
+
+    }
+    public void buttonmain_action(){
+        mainbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
+                mp.start();
+                GameMap.getInstance().finish();
+                CallNextActivity();
+            }
+
+        });
+
+    }
+    public void buttongamemap_action(){
+        gamemapbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+                mp.start();
+                CallNextActivity();
+
+            }
+
+        });
+    }
+    public void buttonresume_action(){
+        resumebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
+                mp.start();
+                dialog.cancel();
+            }
+
+        });
+
+    }
 
 
     public void handletouch(MotionEvent m){

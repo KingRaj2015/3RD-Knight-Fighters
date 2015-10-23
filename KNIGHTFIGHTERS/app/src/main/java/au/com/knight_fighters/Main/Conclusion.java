@@ -14,7 +14,7 @@ import au.com.knight_fighters.R;
 public class Conclusion extends AppCompatActivity {
     private VideoView myVideoView;
     private int position;
-    private static MediaPlayer Background = MainActivity.getBackground_music();
+    private MediaPlayer Background = MainActivity.getBackground_music();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

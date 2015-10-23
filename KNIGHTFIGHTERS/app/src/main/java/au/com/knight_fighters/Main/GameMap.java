@@ -9,10 +9,13 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import au.com.knight_fighters.R;
 import au.com.knight_fighters.Level_1.Level1background;
@@ -29,12 +32,19 @@ import au.com.knight_fighters.Level_4.Level4background;
 
 public class GameMap extends AppCompatActivity {
     public static GameMap gamemap;
-    private static MediaPlayer Background = MainActivity.getBackground_music();
+    private MediaPlayer Background = MainActivity.getBackground_music();
+    private Dialog dialog;
+    private Button mainbutton, cancelbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         gamemap = this;
          setContentView(R.layout.activity_game_map);
+        Toast toast =Toast.makeText(getApplicationContext(),"UNLOCK EACH LEVEL TO GET TO THE FINAL BATTLE", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP,0,0);
+        toast.show();
+
 
 
 
@@ -45,12 +55,42 @@ public class GameMap extends AppCompatActivity {
     }
 
     public void Options(View v){
-        Dialog dialog = new Dialog(GameMap.this);
+        dialog = new Dialog(GameMap.this);
         dialog.setTitle("OPTIONS");
         dialog.setContentView(R.layout.options);
         dialog.show();
 
+        mainbutton = (Button)dialog.findViewById(R.id.options_main);
+        cancelbutton = (Button)dialog.findViewById(R.id.options_cancel);
 
+        buttonmain_action();
+        buttoncancel_action();
+
+
+
+    }
+    public void buttonmain_action(){
+        mainbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+                mp.start();
+                finish();
+            }
+
+        });
+
+    }
+    public void buttoncancel_action(){
+        cancelbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+                mp.start();
+                dialog.cancel();
+            }
+
+        });
     }
 
     public void Level1(View v){
@@ -81,10 +121,7 @@ public class GameMap extends AppCompatActivity {
         mp.start();
         Background.pause();
     }
-    public void Menu(View v){
 
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

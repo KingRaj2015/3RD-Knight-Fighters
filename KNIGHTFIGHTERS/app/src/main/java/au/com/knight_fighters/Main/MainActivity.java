@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         Background.stop();
                         System.exit(0);
+                        finish();
 
                     }
 
