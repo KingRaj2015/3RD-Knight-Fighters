@@ -72,20 +72,10 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/button_background"
                 android:textColor="#ffffff"
-                android:textStyle="bold" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RESUME GAME"
-                android:id="@+id/button2"
-                android:layout_marginLeft="0dp"
-                android:onClick="resume"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/button_background"
-                android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="20dp" />
+
+
 
             <Button
                 android:layout_width="match_parent"
@@ -98,7 +88,7 @@
                 android:background="@drawable/button_background"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="20dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -111,7 +101,7 @@
                 android:background="@drawable/button_background"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="20dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -123,7 +113,7 @@
                 android:background="@drawable/button_background"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="20dp" />
         </LinearLayout>
 
         <LinearLayout

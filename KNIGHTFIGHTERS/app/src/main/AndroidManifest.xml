@@ -154,6 +154,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Main.Help"
+            android:label="@string/title_activity_help"
+            android:parentActivityName=".Main.MainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="au.com.knight_fighters.Help" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="au.com.knight_fighters.Main.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -105,11 +105,13 @@ public class GameMap extends AppCompatActivity {
 
 
     }
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void Level3_enable(){
         this.findViewById(R.id.level3).setEnabled(true);
         this.findViewById(R.id.level3).setAlpha(1f);
 
     }
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void Level4_enable(){
         this.findViewById(R.id.level4).setEnabled(true);
         this.findViewById(R.id.level4).setAlpha(1f);

@@ -55,35 +55,24 @@ public class MainActivity extends AppCompatActivity {
     public void btn_New(View v){
 
          startActivity(new Intent(this, StoryIntroActivity.class));
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-         mp.start();
-        Background.seekTo(0);
+        backgroudmusic();
 
     }
-    public void resume(View v){
 
-        //startActivity(new Intent(this, StoryIntroActivity.class));
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-        mp.start();
-        Background.stop();
-    }
     public void help(View v){
 
-        //startActivity(new Intent(this, StoryIntroActivity.class));
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-        mp.start();
+        startActivity(new Intent(this, Help.class));
+        backgroudmusic();
 
     }
 
     public void Credits(View v){
 
         startActivity(new Intent(this,CreditsActivity.class));
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-        mp.start();
+        backgroudmusic();
     }
     public void exit(View v){
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-        mp.start();
+        backgroudmusic();
         AlertDialog.Builder message = new AlertDialog.Builder(MainActivity.this);
         message.setTitle("             Are you sure you want to exit?");
         message.setCancelable(true);
@@ -110,6 +99,13 @@ public class MainActivity extends AppCompatActivity {
         message.create();
         message.show();
 
+
+    }
+
+    public void backgroudmusic(){
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+        mp.start();
+        Background.seekTo(0);
 
     }
     @Override
