@@ -110,6 +110,7 @@ public class Level3 extends AppCompatActivity {
 
     }
     public void CallNextActivity(){
+        GameMap.getInstance().Level4_enable();
         level_music.pause();
         Background.start();
         Background.seekTo(0);

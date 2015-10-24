@@ -21,9 +21,11 @@
             android:layout_weight="1"
             android:layout_margin="2dp"
             android:background="@drawable/level1"
-            android:id="@+id/button6"
+            android:id="@+id/level1"
             android:onClick="Level1"
+
              />
+
 
 
 
@@ -35,7 +37,8 @@
             android:layout_weight="1"
             android:layout_margin="2dp"
             android:background="@drawable/level2"
-            android:id="@+id/button8"
+            android:enabled="false"
+            android:id="@+id/level2"
             android:onClick="Level2"
 
              />
@@ -45,8 +48,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_margin="2dp"
+            android:enabled="false"
             android:background="@drawable/level3"
-            android:id="@+id/button9"
+            android:id="@+id/level3"
             android:onClick="Level3"
 
              />
@@ -56,8 +60,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_margin="2dp"
+            android:enabled="false"
             android:background="@drawable/level4"
-            android:id="@+id/button10"
+            android:id="@+id/level4"
             android:onClick="Level4"
 
              />

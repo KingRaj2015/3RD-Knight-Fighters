@@ -1,5 +1,6 @@
 package au.com.knight_fighters.Main;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -34,8 +36,9 @@ public class GameMap extends AppCompatActivity {
     public static GameMap gamemap;
     private MediaPlayer Background = MainActivity.getBackground_music();
     private Dialog dialog;
-    private Button mainbutton, cancelbutton;
+    private Button mainbutton, cancelbutton, level1, level2, level3, level4;
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,9 @@ public class GameMap extends AppCompatActivity {
         toast.setGravity(Gravity.TOP,0,0);
         toast.show();
 
+        this.findViewById(R.id.level2).setAlpha(.2f);
+        this.findViewById(R.id.level3).setAlpha(.2f);
+        this.findViewById(R.id.level4).setAlpha(.2f);
 
 
 
@@ -73,7 +79,7 @@ public class GameMap extends AppCompatActivity {
         mainbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
                 mp.start();
                 finish();
             }
@@ -85,41 +91,60 @@ public class GameMap extends AppCompatActivity {
         cancelbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
                 mp.start();
                 dialog.cancel();
             }
 
         });
     }
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public void Level2_enable(){
+        this.findViewById(R.id.level2).setEnabled(true);
+        this.findViewById(R.id.level2).setAlpha(1f);
+
+
+    }
+    public void Level3_enable(){
+        this.findViewById(R.id.level3).setEnabled(true);
+        this.findViewById(R.id.level3).setAlpha(1f);
+
+    }
+    public void Level4_enable(){
+        this.findViewById(R.id.level4).setEnabled(true);
+        this.findViewById(R.id.level4).setAlpha(1f);
+
+
+
+
+    }
+
 
     public void Level1(View v){
 
         startActivity(new Intent(this, Level1background.class));
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-        mp.start();
-        Background.pause();
+       backgroudmusic();
     }
     public void Level2(View v){
 
         startActivity(new Intent(this, Level2background.class));
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-        mp.start();
-        Background.pause();
+        backgroudmusic();
     }
     public void Level3(View v){
 
         startActivity(new Intent(this, Level3background.class));
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-        mp.start();
-        Background.pause();
+       backgroudmusic();
     }
     public void Level4(View v){
 
         startActivity(new Intent(this, Level4background.class));
+        backgroudmusic();
+    }
+    public void backgroudmusic(){
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();
         Background.pause();
+
     }
 
 
