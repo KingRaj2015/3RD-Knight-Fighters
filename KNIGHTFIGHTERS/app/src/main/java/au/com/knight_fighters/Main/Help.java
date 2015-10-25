@@ -10,11 +10,25 @@ import android.view.View;
 import au.com.knight_fighters.R;
 
 public class Help extends AppCompatActivity {
-
+    private MediaPlayer Background = MainActivity.getBackground_music();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
+    }
+    @Override
+    public void onPause (){
+        super.onPause();
+        Background.pause();
+
+
+    }
+    @Override
+    public void onResume (){
+        super.onResume();
+        Background.start();
+
+
     }
     public void Main(View v){
         finish();

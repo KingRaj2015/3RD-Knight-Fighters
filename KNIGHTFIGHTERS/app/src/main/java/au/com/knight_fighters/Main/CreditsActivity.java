@@ -13,11 +13,25 @@ import au.com.knight_fighters.R;
  */
 
 public class CreditsActivity extends AppCompatActivity {
-
+    private MediaPlayer Background = MainActivity.getBackground_music();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
+    }
+    @Override
+    public void onPause (){
+        super.onPause();
+        Background.pause();
+
+
+    }
+    @Override
+    public void onResume (){
+        super.onResume();
+        Background.start();
+
+
     }
     public void MainMenu(View v){
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);

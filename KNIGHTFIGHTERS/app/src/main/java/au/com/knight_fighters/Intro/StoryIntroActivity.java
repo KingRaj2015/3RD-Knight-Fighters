@@ -55,6 +55,7 @@ private VideoView myVideoView;
         super.onPause();
         position = myVideoView.getCurrentPosition();
         myVideoView.pause();
+        Background.pause();
 
     }
 
@@ -63,6 +64,7 @@ private VideoView myVideoView;
         super.onResume();
         myVideoView.seekTo(position);
         myVideoView.start();
+        Background.start();
 
     }
 

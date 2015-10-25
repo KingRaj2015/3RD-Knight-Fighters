@@ -47,6 +47,21 @@ public class MainActivity extends AppCompatActivity {
         Background.setLooping(true);
 
     }
+    @Override
+    public void onPause (){
+        super.onPause();
+        Background.pause();
+
+
+    }
+    @Override
+    public void onResume (){
+        super.onResume();
+        Background.start();
+
+
+    }
+
     public static MainActivity getInstance (){
         Background.pause();
          return main;

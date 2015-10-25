@@ -68,6 +68,8 @@ public class Level1background extends AppCompatActivity {
         super.onPause();
         position = myVideoView.getCurrentPosition();
         myVideoView.pause();
+        level_music.pause();
+
 
     }
 
@@ -76,6 +78,7 @@ public class Level1background extends AppCompatActivity {
         super.onResume();
         myVideoView.seekTo(position);
         myVideoView.start();
+        level_music.start();
 
     }
     public void handletouch(MotionEvent m){

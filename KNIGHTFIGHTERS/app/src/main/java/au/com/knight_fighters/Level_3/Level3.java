@@ -43,6 +43,20 @@ public class Level3 extends AppCompatActivity {
                 }
         );
     }
+    @Override
+    public void onPause (){
+        super.onPause();
+        level_music.pause();
+
+
+    }
+    @Override
+    public void onResume (){
+        super.onResume();
+        level_music.start();
+
+
+    }
     public void Pause(View v){
         dialog = new Dialog(Level3.this);
         dialog.setTitle("OPTIONS");
@@ -111,8 +125,7 @@ public class Level3 extends AppCompatActivity {
     }
     public void CallNextActivity(){
         GameMap.getInstance().Level4_enable();
-        level_music.pause();
-        Background.start();
+
         Background.seekTo(0);
                 finish();
 

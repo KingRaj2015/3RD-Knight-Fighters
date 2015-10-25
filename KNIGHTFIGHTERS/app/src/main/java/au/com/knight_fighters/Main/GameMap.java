@@ -56,6 +56,20 @@ public class GameMap extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onPause (){
+        super.onPause();
+        Background.pause();
+
+
+    }
+    @Override
+    public void onResume (){
+        super.onResume();
+        Background.start();
+
+
+    }
      public static GameMap getInstance(){
         return gamemap;
     }

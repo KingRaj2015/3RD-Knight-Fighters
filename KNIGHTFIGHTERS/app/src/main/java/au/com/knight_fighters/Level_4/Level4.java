@@ -43,7 +43,20 @@ public class Level4 extends AppCompatActivity {
         );
     }
 
+    @Override
+    public void onPause (){
+        super.onPause();
+        level_music.pause();
 
+
+    }
+    @Override
+    public void onResume (){
+        super.onResume();
+        level_music.start();
+
+
+    }
     public void Pause(View v){
         dialog = new Dialog(Level4.this);
         dialog.setTitle("OPTIONS");
@@ -68,7 +81,8 @@ public class Level4 extends AppCompatActivity {
                 MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
                 mp.start();
                 GameMap.getInstance().finish();
-                CallNextActivity();
+                Background.seekTo(0);
+                finish();
             }
 
         });
@@ -80,7 +94,8 @@ public class Level4 extends AppCompatActivity {
             public void onClick(View v) {
                 MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
                 mp.start();
-                CallNextActivity();
+                Background.seekTo(0);
+                finish();
 
             }
 
@@ -110,8 +125,7 @@ public class Level4 extends AppCompatActivity {
     }
     public void CallNextActivity(){
         startActivity(new Intent(this, Conclusion.class));
-        level_music.pause();
-        Background.start();
+
         Background.seekTo(0);
                finish();
 
