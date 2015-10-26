@@ -91,6 +91,9 @@ public class Level1 extends AppCompatActivity {
                 mp.start();
                 GameMap.getInstance().finish();
                 CallNextActivity();
+                GameMap.getInstance().finish();
+                Background.seekTo(0);
+                finish();
             }
 
         });
@@ -102,8 +105,8 @@ public class Level1 extends AppCompatActivity {
             public void onClick(View v) {
                 MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
                 mp.start();
-                CallNextActivity();
-
+                Background.seekTo(0);
+                finish();
             }
 
         });

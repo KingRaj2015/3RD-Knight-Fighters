@@ -81,7 +81,8 @@ public class Level2 extends AppCompatActivity {
                 MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
                 mp.start();
                 GameMap.getInstance().finish();
-                CallNextActivity();
+                Background.seekTo(0);
+                finish();
             }
 
         });
@@ -93,7 +94,8 @@ public class Level2 extends AppCompatActivity {
             public void onClick(View v) {
                 MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
                 mp.start();
-                CallNextActivity();
+                Background.seekTo(0);
+                finish();
 
             }
 
