@@ -7,18 +7,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import au.com.knight_fighters.R;
-
+/* CREATED BY RAJAT THOMAS */
 /*
 * Purpose: to display the creator's and benefactors of the development of this application.
  */
 
 public class CreditsActivity extends AppCompatActivity {
-
+    private MediaPlayer Background = MainActivity.getBackground_music();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
     }
+    //when this screen is no longer the active screen, this method gets called
+    @Override
+    public void onPause (){
+        super.onPause();
+        Background.pause();
+
+
+    }
+    //when user returns to this screen making it active this method is invoked
+    @Override
+    public void onResume (){
+        super.onResume();
+        Background.start();
+
+
+    }
+    //goes back to main activity
     public void MainMenu(View v){
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();

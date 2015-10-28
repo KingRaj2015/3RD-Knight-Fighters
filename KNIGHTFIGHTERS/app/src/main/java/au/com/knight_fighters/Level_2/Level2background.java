@@ -12,19 +12,30 @@ import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
 import au.com.knight_fighters.Level_1.Level1;
+import au.com.knight_fighters.Level_1.Level1background;
+import au.com.knight_fighters.Main.MainActivity;
 import au.com.knight_fighters.R;
+/* CREATED BY RAJAT THOMAS */
 
 public class Level2background extends AppCompatActivity {
     private VideoView myVideoView;
     private int position;
+    //calls the level background music instantiated in level 1
+    private static MediaPlayer level_music = Level1background.getLevel_music();
+
+
+    //this method is called when this class is instantiated
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level2background);
 
+        //starting the level background music as defined above
+        level_music.start();
 
+        //assigning a videoview
         myVideoView = (VideoView)findViewById(R.id.videoView);
-        myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.intro);
+        myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.level2);
         myVideoView.start();
         myVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
@@ -34,9 +45,9 @@ public class Level2background extends AppCompatActivity {
                 CallNextActivity();
             }
         });
-
+        //setting the layout of this activity to be taken from activity_level2background
         RelativeLayout levelbg2 = (RelativeLayout)findViewById(R.id.levelbg2);
-
+        //set onTouchListener on the entire screen
         levelbg2.setOnTouchListener(
                 new RelativeLayout.OnTouchListener() {
                     public boolean onTouch(View v, MotionEvent m) {
@@ -50,22 +61,25 @@ public class Level2background extends AppCompatActivity {
         );
 
     }
-
+    //when this screen is no longer the active screen, this method gets called
     @Override
     public void onPause() {
         super.onPause();
         position = myVideoView.getCurrentPosition();
         myVideoView.pause();
+        level_music.pause();
 
     }
-
+    //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume() {
         super.onResume();
         myVideoView.seekTo(position);
         myVideoView.start();
+        level_music.start();
 
     }
+    //handletouch method called when user clicks the screen and calls a different method
     public void handletouch(MotionEvent m){
         if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
             CallNextActivity();
@@ -74,8 +88,10 @@ public class Level2background extends AppCompatActivity {
 
 
     }
+    //calls the appropriate level that follows this story
     public void CallNextActivity(){
         startActivity(new Intent(this, Level2.class));
+        level_music.seekTo(0);
         finish();
 
     }

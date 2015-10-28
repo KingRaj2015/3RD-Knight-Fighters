@@ -14,4 +14,6 @@
     <string name="title_activity_level2">Level2</string>
     <string name="title_activity_level3">Level3</string>
     <string name="title_activity_level4">Level4</string>
+    <string name="title_activity_conclusion">Conclusion</string>
+    <string name="title_activity_help">Help</string>
 </resources>

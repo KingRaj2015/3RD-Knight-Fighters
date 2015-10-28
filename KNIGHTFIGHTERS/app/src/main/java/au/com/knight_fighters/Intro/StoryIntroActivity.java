@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.VideoView;
 
 import au.com.knight_fighters.Main.GameMap;
+import au.com.knight_fighters.Main.MainActivity;
 import au.com.knight_fighters.R;
 
 /*
@@ -23,15 +24,17 @@ import au.com.knight_fighters.R;
 public class StoryIntroActivity extends AppCompatActivity {
 private VideoView myVideoView;
     private int position;
+    //call the getBackground_music() method from MainActivity class to get the instance of current background music
+    private static MediaPlayer Background = MainActivity.getBackground_music();
 
-
-
+        //method gets call when this class is instantiated
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_back_ground);
 
-        myVideoView = (VideoView)findViewById(R.id.videoView);
+        //declaring a video view object that will store a video and play it when this method executes
+        myVideoView = (VideoView)findViewById(R.id.videoView_intro);
         myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.intro);
         myVideoView.start();
         myVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -43,48 +46,28 @@ private VideoView myVideoView;
             }
         });
 
-        RelativeLayout gamebg = (RelativeLayout)findViewById(R.id.gamebg);
-/*
-        gamebg.setOnTouchListener(
-                new RelativeLayout.OnTouchListener() {
-                    public boolean onTouch(View v, MotionEvent m) {
-                        handleTouch(m);
-
-
-                        return true;
-
-                    }
-                }
-        );
-*/
-
 
     }
-
+  //when intro screen is no longer the active screen, this method gets called
     @Override
     public void onPause() {
         super.onPause();
         position = myVideoView.getCurrentPosition();
         myVideoView.pause();
+        Background.pause();
 
     }
-
+ //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume() {
         super.onResume();
         myVideoView.seekTo(position);
         myVideoView.start();
+        Background.start();
 
     }
 
-/*
-    public void handleTouch(MotionEvent m){
-        if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
-            CallNextActivity();
-
-        }
-    }
-*/
+   //onTouchEvent method called when user clicks the screen and calls a diffent method
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         if(e.getActionMasked() == MotionEvent.ACTION_DOWN){
@@ -94,9 +77,10 @@ private VideoView myVideoView;
 
         return true;
     }
-
+    //starts a new activity, finishing what is this activity
     public void CallNextActivity(){
         startActivity(new Intent(this, GameMap.class));
+        Background.seekTo(0);
         finish();
 
     }
