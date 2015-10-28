@@ -28,23 +28,26 @@ public class MainActivity extends AppCompatActivity {
     public static Context appContext;
     public static float scrWidth;
     public static float scrHeight;
+    private static MainActivity main;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        main = this;
 
-        DisplayMetrics displayMetrics = appContext.getResources().getDisplayMetrics();
-        scrWidth = displayMetrics.widthPixels;
-        scrHeight = displayMetrics.heightPixels;
+    }
+    public static MainActivity finishActivity (){
+
+        return main;
     }
 
-    public void NewButton(View v){
+    public void btn_New(View v){
 
-         startActivity(new Intent(this, StoryIntroActivity.class));
+        startActivity(new Intent(this, StoryIntroActivity.class));
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
-         mp.start();
+        mp.start();
     }
     public void resume(View v){
 
@@ -82,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         message.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         System.exit(0);
+                        onDestroy();
                     }
 
                 }
