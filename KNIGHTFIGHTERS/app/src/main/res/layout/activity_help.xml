@@ -43,7 +43,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text = "MAIN MENU"
             android:onClick="Main"
             android:id="@+id/help_main"

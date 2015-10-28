@@ -32,14 +32,16 @@ public class MainActivity extends AppCompatActivity {
     private static MainActivity main;
     private static MediaPlayer Background;
 
+    //getter for background music
     public static MediaPlayer getBackground_music (){
         return Background;
     }
 
-
+    //method gets call when this class is instantiated
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //set the layout of this activity as defned in activity_mainmenu XML file
         setContentView(R.layout.activity_main_menu);
         main = this;
         Background = MediaPlayer.create(getApplicationContext(), R.raw.background);
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Background.setLooping(true);
 
     }
+    //when this screen is no longer the active screen, this method gets called
     @Override
     public void onPause (){
         super.onPause();
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume (){
         super.onResume();
@@ -61,36 +65,39 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+    //getter for object of this class
     public static MainActivity getInstance (){
         Background.pause();
          return main;
     }
-
+    //when new game is clicked
     public void btn_New(View v){
 
          startActivity(new Intent(this, StoryIntroActivity.class));
         backgroudmusic();
 
     }
-
+    //when help button is clicked
     public void help(View v){
 
         startActivity(new Intent(this, Help.class));
         backgroudmusic();
 
     }
-
+    //when credit button is clicked
     public void Credits(View v){
 
         startActivity(new Intent(this,CreditsActivity.class));
         backgroudmusic();
     }
+    //when exit button is clicked
     public void exit(View v){
         backgroudmusic();
+        //instantiating a new alert dialog
         AlertDialog.Builder message = new AlertDialog.Builder(MainActivity.this);
         message.setTitle("             Are you sure you want to exit?");
         message.setCancelable(true);
+        //action when user clicks NO
         message.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
@@ -99,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
         );
+        //action when user click Yes
         message.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Background.stop();
@@ -116,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+    //creates a new mediaplayer object assigned to each button
     public void backgroudmusic(){
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();

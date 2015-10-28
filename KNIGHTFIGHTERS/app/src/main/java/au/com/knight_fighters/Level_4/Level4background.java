@@ -19,15 +19,19 @@ import au.com.knight_fighters.R;
 public class Level4background extends AppCompatActivity {
     private VideoView myVideoView;
     private int position;
+    //calls the level background music instantiated in level 1
     private static MediaPlayer level_music = Level1background.getLevel_music();
 
+    //this method is called when this class is instantiated
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level4background);
 
+        //starting the level background music as defined above
         level_music.start();
 
+        //assigning a videoview
         myVideoView = (VideoView)findViewById(R.id.videoView);
         myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.level4);
         myVideoView.start();
@@ -40,8 +44,9 @@ public class Level4background extends AppCompatActivity {
             }
         });
 
+        //setting the layout of this activity to be taken from activity_level4background
         RelativeLayout levelbg4 = (RelativeLayout)findViewById(R.id.levelbg4);
-
+        //set onTouchListener on the entire screen
         levelbg4.setOnTouchListener(
                 new RelativeLayout.OnTouchListener() {
                     public boolean onTouch(View v, MotionEvent m) {
@@ -54,6 +59,7 @@ public class Level4background extends AppCompatActivity {
                 }
         );
     }
+    //when this screen is no longer the active screen, this method gets called
     @Override
     public void onPause() {
         super.onPause();
@@ -61,7 +67,7 @@ public class Level4background extends AppCompatActivity {
         level_music.pause();
 
     }
-
+    //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume() {
         super.onResume();
@@ -70,14 +76,14 @@ public class Level4background extends AppCompatActivity {
         level_music.start();
 
     }
+    //handletouch method called when user clicks the screen and calls a different method
     public void handletouch(MotionEvent m){
         if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
             CallNextActivity();
 
         }
-
-
     }
+    //calls the appropriate level that follows this story
     public void CallNextActivity(){
         startActivity(new Intent(this, Level4.class));
         level_music.seekTo(0);

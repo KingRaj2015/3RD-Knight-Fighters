@@ -19,6 +19,7 @@ public class CreditsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
     }
+    //when this screen is no longer the active screen, this method gets called
     @Override
     public void onPause (){
         super.onPause();
@@ -26,6 +27,7 @@ public class CreditsActivity extends AppCompatActivity {
 
 
     }
+    //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume (){
         super.onResume();
@@ -33,6 +35,7 @@ public class CreditsActivity extends AppCompatActivity {
 
 
     }
+    //goes back to main activity
     public void MainMenu(View v){
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();

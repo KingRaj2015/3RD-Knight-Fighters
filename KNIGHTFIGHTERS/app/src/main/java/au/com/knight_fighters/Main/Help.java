@@ -16,6 +16,7 @@ public class Help extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
     }
+    //when this screen is no longer the active screen, this method gets called
     @Override
     public void onPause (){
         super.onPause();
@@ -23,6 +24,7 @@ public class Help extends AppCompatActivity {
 
 
     }
+    //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume (){
         super.onResume();
@@ -30,6 +32,7 @@ public class Help extends AppCompatActivity {
 
 
     }
+    //goes back to main activity
     public void Main(View v){
         finish();
 

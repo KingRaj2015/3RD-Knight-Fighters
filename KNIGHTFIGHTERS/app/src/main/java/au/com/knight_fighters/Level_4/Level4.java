@@ -24,9 +24,11 @@ public class Level4 extends AppCompatActivity {
     private Dialog dialog;
     private Button mainbutton, gamemapbutton, resumebutton;
 
+    //method gets call when this class is instantiated
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //set the layout of this activity as defned in activity_level4 XML file
         setContentView(R.layout.activity_level4);
         RelativeLayout level4 = (RelativeLayout)findViewById(R.id.level4);
 
@@ -42,7 +44,7 @@ public class Level4 extends AppCompatActivity {
                 }
         );
     }
-
+    //when this screen is no longer the active screen, this method gets called
     @Override
     public void onPause (){
         super.onPause();
@@ -50,6 +52,7 @@ public class Level4 extends AppCompatActivity {
 
 
     }
+    //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume (){
         super.onResume();
@@ -57,23 +60,26 @@ public class Level4 extends AppCompatActivity {
 
 
     }
+    //When the Options button is clicked , executes the following method.
     public void Pause(View v){
         dialog = new Dialog(Level4.this);
         dialog.setTitle("OPTIONS");
+        //uses an XML file level_options to design the layout of the dialog
         dialog.setContentView(R.layout.level_options);
         dialog.show();
 
+        //define button objects for menu within the dialog
         mainbutton = (Button)dialog.findViewById(R.id.options_main);
         gamemapbutton = (Button)dialog.findViewById(R.id.options_level);
         resumebutton = (Button)dialog.findViewById(R.id.options_cancel);
 
+        //call action methods for respective buttons
         buttonmain_action();
         buttongamemap_action();
         buttonresume_action();
 
-
-
     }
+    //calls the MainActivity class removing itself and the Game Map class
     public void buttonmain_action(){
         mainbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +94,7 @@ public class Level4 extends AppCompatActivity {
         });
 
     }
+    //finishes this class so that user can return to gamemap
     public void buttongamemap_action(){
         gamemapbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +108,7 @@ public class Level4 extends AppCompatActivity {
 
         });
     }
+    //when the user wants to resume the game they click this button
     public void buttonresume_action(){
         resumebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,19 +121,17 @@ public class Level4 extends AppCompatActivity {
         });
 
     }
-
-
+    //handletouch method called when user clicks the screen and calls a diffent method
     public void handletouch(MotionEvent m){
         if(m.getActionMasked() == MotionEvent.ACTION_DOWN){
             CallNextActivity();
 
         }
-
-
     }
+    //calls Game map activity and enables next activity
     public void CallNextActivity(){
         startActivity(new Intent(this, Conclusion.class));
-
+        Background.start();
         Background.seekTo(0);
                finish();
 

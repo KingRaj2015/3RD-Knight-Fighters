@@ -43,11 +43,15 @@ public class GameMap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         gamemap = this;
+
+        //set the layout of this activity as defned in activity_gamemap XML file
          setContentView(R.layout.activity_game_map);
+        //a toast is a temporary text box that appears for limited timeframe when the text as defined below
         Toast toast =Toast.makeText(getApplicationContext(),"UNLOCK EACH LEVEL TO GET TO THE FINAL BATTLE", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.TOP,0,0);
         toast.show();
 
+        //make the buttons transparent
         this.findViewById(R.id.level2).setAlpha(.2f);
         this.findViewById(R.id.level3).setAlpha(.2f);
         this.findViewById(R.id.level4).setAlpha(.2f);
@@ -56,6 +60,7 @@ public class GameMap extends AppCompatActivity {
 
 
     }
+    //when this screen is no longer the active screen, this method gets called
     @Override
     public void onPause (){
         super.onPause();
@@ -63,6 +68,7 @@ public class GameMap extends AppCompatActivity {
 
 
     }
+    //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume (){
         super.onResume();
@@ -70,25 +76,26 @@ public class GameMap extends AppCompatActivity {
 
 
     }
+    //getter for GameMap instance
      public static GameMap getInstance(){
         return gamemap;
     }
 
+    //action for when the options button is clicked
     public void Options(View v){
         dialog = new Dialog(GameMap.this);
         dialog.setTitle("OPTIONS");
+        //uses an XML file options to design the layout of the dialog
         dialog.setContentView(R.layout.options);
         dialog.show();
-
+        //define button objects for menu within the dialog
         mainbutton = (Button)dialog.findViewById(R.id.options_main);
         cancelbutton = (Button)dialog.findViewById(R.id.options_cancel);
-
+        //call action methods for respective buttons
         buttonmain_action();
         buttoncancel_action();
-
-
-
     }
+    //calls the MainActivity class removing itself and the Game Map class
     public void buttonmain_action(){
         mainbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +108,7 @@ public class GameMap extends AppCompatActivity {
         });
 
     }
+    //when the user wants to resume the game they click this button
     public void buttoncancel_action(){
         cancelbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +120,7 @@ public class GameMap extends AppCompatActivity {
 
         });
     }
+    // enables the level 2 button when it is called and makes it opaque
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void Level2_enable(){
         this.findViewById(R.id.level2).setEnabled(true);
@@ -119,43 +128,44 @@ public class GameMap extends AppCompatActivity {
 
 
     }
+    // enables the level 3 button when it is called and makes it opaque
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void Level3_enable(){
         this.findViewById(R.id.level3).setEnabled(true);
         this.findViewById(R.id.level3).setAlpha(1f);
 
     }
+    // enables the level 4 button when it is called and makes it opaque
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void Level4_enable(){
         this.findViewById(R.id.level4).setEnabled(true);
         this.findViewById(R.id.level4).setAlpha(1f);
 
-
-
-
     }
 
-
     public void Level1(View v){
-
         startActivity(new Intent(this, Level1background.class));
        backgroudmusic();
     }
+    //calls Level2 background when this is called
     public void Level2(View v){
 
         startActivity(new Intent(this, Level2background.class));
         backgroudmusic();
     }
+    //calls Level3 background when this is called
     public void Level3(View v){
 
         startActivity(new Intent(this, Level3background.class));
        backgroudmusic();
     }
+    //calls Level4 background when this is called
     public void Level4(View v){
 
         startActivity(new Intent(this, Level4background.class));
         backgroudmusic();
     }
+    //creates a new instance of mediaplayer and assigns it the sound for a button
     public void backgroudmusic(){
         MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.button);
         mp.start();

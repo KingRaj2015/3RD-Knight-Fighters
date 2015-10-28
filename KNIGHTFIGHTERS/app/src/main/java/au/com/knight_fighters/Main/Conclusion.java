@@ -20,9 +20,9 @@ public class Conclusion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conclusion);
-
+        //set the mediaplayer to start from the beginning
         Background.seekTo(0);
-
+        //declaring a video view object that will store a video and play it when this method executes
         myVideoView = (VideoView)findViewById(R.id.videoView_conc);
         myVideoView.setVideoPath("android.resource://"+ getPackageName()+"/"+R.raw.conclusion);
         myVideoView.start();
@@ -36,6 +36,7 @@ public class Conclusion extends AppCompatActivity {
         });
 
     }
+    //when this screen is no longer the active screen, this method gets called
     @Override
     public void onPause() {
         super.onPause();
@@ -43,7 +44,7 @@ public class Conclusion extends AppCompatActivity {
         myVideoView.pause();
 
     }
-
+    //when user returns to this screen making it active this method is invoked
     @Override
     public void onResume() {
         super.onResume();
@@ -52,7 +53,7 @@ public class Conclusion extends AppCompatActivity {
 
     }
 
-
+    //onTouchEvent method called when user clicks the screen and calls a diffent method
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         if(e.getActionMasked() == MotionEvent.ACTION_DOWN){
@@ -62,13 +63,13 @@ public class Conclusion extends AppCompatActivity {
 
         return true;
     }
-
+    //calls the MainActivity ending the GameMap and the initial instance of MainActivity
     public void CallNextActivity(){
         startActivity(new Intent(this, MainActivity.class));
         MainActivity.getInstance().finish();
         GameMap.getInstance().finish();
         finish();
-       // ( (Activity)"au.com.knight_fighters.Intro.IntroMapActivity").finish());
+
 
 
 
